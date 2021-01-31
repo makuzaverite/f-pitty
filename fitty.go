@@ -1,4 +1,4 @@
-package f-pitty
+package fitty
 
 import "fmt"
 

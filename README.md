@@ -1,2 +1,2 @@
-# f-pitty
+# Fitty
 (WIP) File and folder utility cli app

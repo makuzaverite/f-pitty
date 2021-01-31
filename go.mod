@@ -1,3 +1,3 @@
-module github.com/makuzaverite/f-pitty
+module github.com/makuzaverite/fitty
 
 go 1.15
