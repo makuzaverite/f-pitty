@@ -17,7 +17,7 @@ var rootCommand = &cobra.Command{
 	},
 }
 
-// Execute function
+// Execute initialized cli
 func Execute() {
 	if err := rootCommand.Execute(); err != nil {
 		fmt.Println(err)

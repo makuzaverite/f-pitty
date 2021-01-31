@@ -1,16 +1,9 @@
 package main
 
 import (
-	"flag"
-	"fmt"
+	"github.com/makuzaverite/fitty/pkg/commands"
 )
 
 func main() {
-	fmt.Println("Fitty")
-
-	flag.String("list", "", "list all files in a directory")
-	flag.Parse()
-
-	flag.PrintDefaults()
-
+	commands.Execute()
 }
