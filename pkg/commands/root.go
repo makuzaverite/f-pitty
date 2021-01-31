@@ -11,8 +11,25 @@ import (
 var rootCommand = &cobra.Command{
 	Use:   "fitty",
 	Short: "Interract with filesystem on all oses with the same commands",
-	Long: `Fitty is Cross Platform fileSystem utility cli
-	Build with Productivity for productivity`,
+	Long: `
+
+
+    ____    _    __    __
+   / __/   (_)  / /_  / /_   __  __
+  / /_    / /  / __/ / __/  / / / /
+ / __/   / /  / /_  / /_   / /_/ /
+/_/     /_/   \__/  \__/   \__, /
+                          /____/
+
+
+
+
+
+
+	Fitty the cross platform filesystem utility
+
+	Version: 0.0.1
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		versionFlag := utils.GetBool("version", cmd)
