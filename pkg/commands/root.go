@@ -10,9 +10,8 @@ import (
 
 var rootCommand = &cobra.Command{
 	Use:   "fitty",
-	Short: "Interract with filesystem on all oses with the same commands",
+	Short: "Interract with file system on all oses with the same commands",
 	Long: `
-
 
     ____    _    __    __
    / __/   (_)  / /_  / /_   __  __
@@ -23,12 +22,9 @@ var rootCommand = &cobra.Command{
 
 
 
+Fitty the cross platform file system utility
 
-
-
-	Fitty the cross platform filesystem utility
-
-	Version: 0.0.1
+Version: 0.0.1
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 
