@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -13,7 +14,21 @@ var rootCommand = &cobra.Command{
 	Long: `Fitty is Cross Platform fileSystem utility cli
 	Build with Productivity for productivity`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd.Help()
+
+		versionFlag := utils.GetBool("version", cmd)
+
+		if versionFlag {
+			version := "v0.0.1"
+
+			fmt.Println("fitty version ", version)
+		} else {
+			err := cmd.Help()
+
+			if err != nil {
+				fmt.Println("Failed to display help ", err, 1)
+			}
+			os.Exit(0)
+		}
 	},
 }
 
