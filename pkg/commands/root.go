@@ -8,12 +8,12 @@ import (
 )
 
 var rootCommand = &cobra.Command{
-	Use:   "Fitty",
+	Use:   "fitty",
 	Short: "Interract with filesystem on all oses with the same commands",
 	Long: `Fitty is Cross Platform fileSystem utility cli
-				 Build with Productivity in mind`,
+	Build with Productivity for productivity`,
 	Run: func(cmd *cobra.Command, args []string) {
-
+		cmd.Help()
 	},
 }
 
