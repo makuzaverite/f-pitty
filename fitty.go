@@ -1,7 +1,16 @@
-package fitty
+package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Hello world! from f-pitty")
+	fmt.Println("Fitty")
+
+	flag.String("list", "", "list all files in a directory")
+	flag.Parse()
+
+	flag.PrintDefaults()
+
 }
