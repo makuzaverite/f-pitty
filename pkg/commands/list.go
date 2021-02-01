@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -34,10 +35,23 @@ func handleListingFiles() {
 	files, err := ioutil.ReadDir(currDir)
 
 	for _, file := range files {
-		fmt.Print(file.Name() + "  ")
+		if !checkDotFile(file) {
+			fmt.Print(file.Name() + "  ")
+		}
 	}
 }
 
 func isDir(file os.FileInfo) bool {
 	return file.IsDir()
+}
+
+func checkDotFile(file os.FileInfo) bool {
+
+	index := strings.Index(file.Name(), ".")
+
+	if index == 0 {
+		return true
+	}
+
+	return false
 }
