@@ -1,10 +1,10 @@
 ## fitty touch
 
-add file
+Add file
 
 ### Synopsis
 
-add new file in current directory
+Add new file in current directory
 
 ```
 fitty touch [flags]

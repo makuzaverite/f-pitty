@@ -15,7 +15,6 @@ var listCmd = &cobra.Command{
 	Short: "List all files in a directory",
 	Long:  "Listing all files in the directory",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(args[0])
 		handleListingFiles()
 	},
 }
@@ -26,6 +25,8 @@ func init() {
 
 func handleListingFiles() {
 	currDir, err := os.Getwd()
+	filesCount := 0
+	dirsCount := 0
 
 	if err != nil {
 		fmt.Println("Failed to open this directory")
@@ -34,15 +35,37 @@ func handleListingFiles() {
 
 	files, err := ioutil.ReadDir(currDir)
 
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("\n")
 	for _, file := range files {
 		if !checkDotFile(file) {
+			if file.IsDir() {
+				dirsCount++
+			} else {
+				filesCount++
+			}
 			fmt.Print(file.Name() + "  ")
 		}
 	}
-}
 
-func isDir(file os.FileInfo) bool {
-	return file.IsDir()
+	var fileName, dirName string
+
+	if filesCount > 1 {
+		fileName = "files"
+	} else {
+		fileName = "file"
+	}
+
+	if dirsCount > 1 {
+		dirName = "Directories"
+	} else {
+		dirName = "Directory"
+	}
+
+	fmt.Printf("\n\n%d %s, %d %s\n", dirsCount, dirName, filesCount, fileName)
 }
 
 func checkDotFile(file os.FileInfo) bool {

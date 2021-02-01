@@ -9,9 +9,9 @@ import (
 
 var addFile = &cobra.Command{
 	Use:   "touch",
-	Short: "add file",
+	Short: "Add file",
 	Args:  cobra.MaximumNArgs(25),
-	Long:  "add new file in current directory",
+	Long:  "Add new file in current directory",
 	Run: func(cmd *cobra.Command, args []string) {
 		newFile(args)
 	},
