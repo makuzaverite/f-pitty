@@ -19,7 +19,6 @@ var listCmd = &cobra.Command{
 	},
 }
 
-// listCmd.Flags().IntVarP(1,"list","")
 func init() {
 	rootCommand.AddCommand(listCmd)
 }
