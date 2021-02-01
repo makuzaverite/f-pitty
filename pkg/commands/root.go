@@ -26,16 +26,16 @@ var rootCommand = &cobra.Command{
 
 Fitty the cross platform file system utility
 Version: 0.0.1
-
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		versionFlag := utils.GetBool("version", cmd)
 
 		if versionFlag {
-			version := "v0.0.1"
+			version := "0.0.1"
 
-			fmt.Println("fitty version ", version)
+			fmt.Printf("\n")
+			fmt.Println("Fitty version ", version)
 			fmt.Println("Check Current release https://github.com/makuzaverite/fitty/releases")
 
 		} else {

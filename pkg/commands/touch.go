@@ -28,6 +28,7 @@ func newFile(fNames []string) {
 		fmt.Println("Failed to create files")
 	}
 
+	//TODO: Make the functionality to add new file work through
 	fmt.Print(currDir)
 
 	for _, fName := range fNames {

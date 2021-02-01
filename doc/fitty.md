@@ -17,7 +17,6 @@ Interract with file system on all oses with the same commands
 
 Fitty the cross platform file system utility
 Version: 0.0.1
-
 	
 
 ```
