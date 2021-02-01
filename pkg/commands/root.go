@@ -11,7 +11,7 @@ import (
 )
 
 var rootCommand = &cobra.Command{
-	Use:   "fitty [command]",
+	Use:   "fitty",
 	Short: "Interract with file system on all oses with the same commands",
 	Long: `
 
@@ -33,10 +33,10 @@ Version: 0.0.1
 		versionFlag := utils.GetBool("version", cmd)
 
 		if versionFlag {
-
 			version := "v0.0.1"
+
 			fmt.Println("fitty version ", version)
-			fmt.Println("Current release https://github.com/makuzaverite/fitty/releases")
+			fmt.Println("Check Current release https://github.com/makuzaverite/fitty/releases")
 
 		} else {
 			err := cmd.Help()
@@ -59,6 +59,8 @@ func Execute() {
 	if err != nil {
 		log.Fatal("Doc gen failed")
 	}
+
+	rootCommand.Flags().Bool("version", false, "Get the current version of fitty")
 
 	if err := rootCommand.Execute(); err != nil {
 		fmt.Println(err)

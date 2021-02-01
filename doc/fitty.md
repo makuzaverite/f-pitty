@@ -21,7 +21,7 @@ Version: 0.0.1
 	
 
 ```
-fitty [command] [flags]
+fitty [flags]
 ```
 
 ### Options
