@@ -10,7 +10,7 @@ The project is still in `development` a lot of things may change in future
 
 ### Contributors
 
-1. [@makuzaverite](https://github.com/makuzaverite)
+- [@makuzaverite](https://github.com/makuzaverite)
 
 You are more then welcome to contribute!
 

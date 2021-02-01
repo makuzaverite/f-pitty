@@ -60,9 +60,9 @@ func handleListingFiles() {
 	}
 
 	if dirsCount > 1 {
-		dirName = "Directories"
+		dirName = "directories"
 	} else {
-		dirName = "Directory"
+		dirName = "directory"
 	}
 
 	fmt.Printf("\n\n%d %s, %d %s\n", dirsCount, dirName, filesCount, fileName)

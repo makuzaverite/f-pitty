@@ -54,9 +54,7 @@ func Execute() {
 
 	cmd := rootCommand
 
-	err := doc.GenMarkdownTree(cmd, "./doc")
-
-	if err != nil {
+	if err := doc.GenMarkdownTree(cmd, "./doc"); err != nil {
 		log.Fatal("Doc gen failed")
 	}
 
