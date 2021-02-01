@@ -15,4 +15,5 @@ The project is still in `development` a lot of things may change in future
 You are more then welcome to contribute!
 
 
-Licence by: [MIT license](https://github.com/makuzaverite/fitty/blob/main/LICENSE)
+
+[MIT license](https://github.com/makuzaverite/fitty/blob/main/LICENSE)
