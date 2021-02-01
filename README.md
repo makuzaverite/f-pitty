@@ -6,9 +6,11 @@
 </br>
 <div align="center">
 
-![AppVeyor Job](https://img.shields.io/appveyor/job/build/makuzaverite/fitty/Build?style=for-the-badge)
+![build](https://github.com/makuzaverite/fitty/workflows/build/badge.svg)
 
 </div>
+
+</br>
 
 >File system utility cli app
 
