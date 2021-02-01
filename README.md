@@ -2,8 +2,6 @@
 <h3 align="center">
   Fitty
 </h3>
-
-</br>
 <div align="center">
 
 ![build](https://github.com/makuzaverite/fitty/workflows/build/badge.svg)
