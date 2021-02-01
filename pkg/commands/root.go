@@ -2,14 +2,16 @@ package commands
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
+	"github.com/spf13/cobra/doc"
 )
 
 var rootCommand = &cobra.Command{
-	Use:   "fitty",
+	Use:   "fitty [command]",
 	Short: "Interract with file system on all oses with the same commands",
 	Long: `
 
@@ -23,17 +25,19 @@ var rootCommand = &cobra.Command{
 
 
 Fitty the cross platform file system utility
-
 Version: 0.0.1
+
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		versionFlag := utils.GetBool("version", cmd)
 
 		if versionFlag {
-			version := "v0.0.1"
 
+			version := "v0.0.1"
 			fmt.Println("fitty version ", version)
+			fmt.Println("Current release https://github.com/makuzaverite/fitty/releases")
+
 		} else {
 			err := cmd.Help()
 
@@ -47,6 +51,15 @@ Version: 0.0.1
 
 // Execute initialized cli
 func Execute() {
+
+	cmd := rootCommand
+
+	err := doc.GenMarkdownTree(cmd, "./doc")
+
+	if err != nil {
+		log.Fatal("Doc gen failed")
+	}
+
 	if err := rootCommand.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
