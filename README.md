@@ -1,8 +1,14 @@
-<p style="align:center">
+</br></br>
+<h3 align="center">
   Fitty
+</h3>
 
-![AppVeyor Job](https://img.shields.io/appveyor/job/build/makuzaverite/fitty/build?style=for-the-badge)
-</p>
+</br>
+<div align="center">
+
+![AppVeyor Job](https://img.shields.io/appveyor/job/build/makuzaverite/fitty/Build?style=for-the-badge)
+
+</div>
 
 >File system utility cli app
 
