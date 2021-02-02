@@ -1,16 +1,14 @@
-</br></br>
-<h3 align="center">
-  Fitty
-</h3>
-<div align="center">
+### Fitty
 
 ![build](https://github.com/makuzaverite/fitty/workflows/build/badge.svg)
+
+>File system utility cli app
+
 
 </div>
 
 </br>
 
->File system utility cli app
 
 This project built to make it easy for cli user easily integrate with the command line
 
