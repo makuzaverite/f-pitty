@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -15,11 +16,23 @@ var listCmd = &cobra.Command{
 	Short: "List all files in a directory",
 	Long:  "Listing all files in the directory",
 	Run: func(cmd *cobra.Command, args []string) {
-		handleListingFiles()
+
+		listMore := utils.GetBool("more", cmd)
+
+		if listMore {
+			handleListingMore()
+		} else {
+
+			handleListingFiles()
+		}
+
 	},
 }
 
 func init() {
+
+	listCmd.Flags().Bool("more", false, "Get more info about the list command")
+
 	rootCommand.AddCommand(listCmd)
 }
 
@@ -41,14 +54,14 @@ func handleListingFiles() {
 
 	fmt.Printf("\n")
 	for _, file := range files {
-		if !checkDotFile(file) {
-			if file.IsDir() {
-				dirsCount++
-			} else {
-				filesCount++
-			}
-			fmt.Print(file.Name() + "  ")
+
+		if file.IsDir() {
+			dirsCount++
+		} else {
+			filesCount++
 		}
+		fmt.Print(file.Name() + "  ")
+
 	}
 
 	var fileName, dirName string
@@ -77,4 +90,68 @@ func checkDotFile(file os.FileInfo) bool {
 	}
 
 	return false
+}
+
+func handleListingMore() {
+	currDir, err := os.Getwd()
+	filesCount := 0
+	dirsCount := 0
+
+	if err != nil {
+		fmt.Println("Failed to open this directory")
+		os.Exit(1)
+	}
+
+	files, err := ioutil.ReadDir(currDir)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("\n")
+	for _, file := range files {
+
+		info, err := os.Stat(file.Name())
+
+		if err != nil {
+			fmt.Println("info error")
+		}
+
+		kilos := float64(info.Size() / 1000)
+
+		fmt.Print(kilos, " kb ", "\t")
+
+		fmt.Print(info.Mode(), "\t")
+
+		fmt.Println(file.Name())
+
+		if file.IsDir() {
+			dirsCount++
+		} else {
+			filesCount++
+		}
+
+	}
+
+	var fileName, dirName string
+
+	if filesCount > 1 {
+		fileName = "files"
+	} else {
+		fileName = "file"
+	}
+
+	if dirsCount > 1 {
+		dirName = "directories"
+	} else {
+		dirName = "directory"
+	}
+
+	currentDirectoryInfo, errorInOpenCurrDir := os.Stat(currDir)
+
+	if errorInOpenCurrDir != nil {
+		fmt.Println("Error in the process")
+	}
+
+	fmt.Printf("\n\n%d %s, %d %s, total size %d kb\n", dirsCount, dirName, filesCount, fileName, currentDirectoryInfo.Size()/1000)
 }
