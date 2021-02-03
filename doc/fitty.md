@@ -20,7 +20,13 @@ Version: 0.0.1
 	
 
 ```
-fitty [flags]
+fitty <command> <subcommand> [flags]
+```
+
+### Examples
+
+```
+$ fitty ls
 ```
 
 ### Options

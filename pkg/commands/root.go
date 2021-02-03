@@ -11,7 +11,8 @@ import (
 )
 
 var rootCommand = &cobra.Command{
-	Use:   "fitty",
+	Use:   "fitty <command> <subcommand>",
+	Args:  cobra.ExactArgs(0),
 	Short: "Interract with file system on all oses with the same commands",
 	Long: `
 
@@ -27,6 +28,9 @@ var rootCommand = &cobra.Command{
 Fitty the cross platform file system utility
 Version: 0.0.1
 	`,
+	SilenceErrors: true,
+	SilenceUsage:  true,
+	Example:       "$ fitty ls",
 	Run: func(cmd *cobra.Command, args []string) {
 
 		versionFlag := utils.GetBool("version", cmd)
