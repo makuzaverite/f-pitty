@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"testing"
 
 	"github.com/spf13/cobra"
@@ -46,7 +45,7 @@ func Test_printError(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			out := &bytes.Buffer{}
-			fmt.Println(out, tt.args.err)
+			//fmt.Println(out, tt.args.err)
 			if goOut := out.String(); goOut != tt.wantOut {
 				t.Errorf("Print error %q, wanted %q ", goOut, tt.wantOut)
 			}

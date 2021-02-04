@@ -119,7 +119,7 @@ func handleListingMore() {
 
 		kilos := float64(info.Size() / 1000)
 
-		fmt.Print(kilos, " kb ", "\t")
+		fmt.Print(kilos, " K ", "\t")
 
 		fmt.Print(info.Mode(), "\t")
 
@@ -153,5 +153,5 @@ func handleListingMore() {
 		fmt.Println("Error in the process")
 	}
 
-	fmt.Printf("\n\n%d %s, %d %s, total size %d kb\n", dirsCount, dirName, filesCount, fileName, currentDirectoryInfo.Size()/1000)
+	fmt.Printf("\n\n%d %s, %d %s, total size %d K\n", dirsCount, dirName, filesCount, fileName, formatByets(currentDirectoryInfo.Size()))
 }

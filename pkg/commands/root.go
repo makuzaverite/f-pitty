@@ -2,16 +2,14 @@ package commands
 
 import (
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
-	"github.com/spf13/cobra/doc"
 )
 
 var rootCommand = &cobra.Command{
-	Use:   "fitty <command> <subcommand>",
+	Use:   "fitty",
 	Args:  cobra.ExactArgs(0),
 	Short: "Interract with file system on all oses with the same commands",
 	Long: `
@@ -55,12 +53,6 @@ Version: 0.0.1
 
 // Execute initialized cli
 func Execute() {
-
-	cmd := rootCommand
-
-	if err := doc.GenMarkdownTree(cmd, "./doc"); err != nil {
-		log.Fatal("Doc gen failed")
-	}
 
 	rootCommand.Flags().Bool("version", false, "Get the current version of fitty")
 
