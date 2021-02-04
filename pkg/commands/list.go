@@ -8,6 +8,7 @@ import (
 
 	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
+	"github.com/makuzaverite/fmbytes"
 )
 
 var listCmd = &cobra.Command{
@@ -153,5 +154,5 @@ func handleListingMore() {
 		fmt.Println("Error in the process")
 	}
 
-	fmt.Printf("\n\n%d %s, %d %s, total size %d K\n", dirsCount, dirName, filesCount, fileName, (currentDirectoryInfo.Size()))
+	fmt.Printf("\n\n%d %s, %d %s, total size %d K\n", dirsCount, dirName, filesCount, fileName, fmbytes.formatBytes(currentDirectoryInfo.Size(),2))
 }
