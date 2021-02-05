@@ -14,7 +14,7 @@ This project built to make it easy for cli user easily integrate with the comman
 
 ## Notice
 
-The project is still in `development` a lot of things may change in future
+The project is still in `development` a lot of things  may change in future!
 
 ### Contributors
 
