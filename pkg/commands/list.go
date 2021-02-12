@@ -123,6 +123,8 @@ func handleListingMore() {
 
 		fmt.Print(info.Mode(), "\t")
 
+		// fmt.Print(inf)
+
 		fmt.Println(file.Name())
 
 		if file.IsDir() {

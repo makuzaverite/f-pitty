@@ -4,7 +4,6 @@ on:
     tags:
       - v*
     branches:
-      - master
       - main
   pull_request:
 jobs:
@@ -17,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v1.2.1
         with:
           version: v1.29
