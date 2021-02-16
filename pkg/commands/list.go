@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/fatih/color"
 	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
 )
@@ -22,7 +23,6 @@ var listCmd = &cobra.Command{
 		if listMore {
 			handleListingMore()
 		} else {
-
 			handleListingFiles()
 		}
 
@@ -60,7 +60,7 @@ func handleListingFiles() {
 		} else {
 			filesCount++
 		}
-		fmt.Print(file.Name() + "  ")
+		color.Cyan(file.Name() + "  ")
 
 	}
 

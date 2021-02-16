@@ -7,7 +7,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-
 func emptyRun(*cobra.Command, []string) {}
 
 func checkStringContains(t *testing.T, got, expected string) {
@@ -19,11 +18,12 @@ func checkStringContains(t *testing.T, got, expected string) {
 func TestVersionFlag(t *testing.T) {
 	rootCmd := &cobra.Command{Version: "0.0.1", Run: emptyRun}
 
-	output, err := rootCmd.ExecuteC()
+	_, err := rootCmd.ExecuteC()
 
 	if err != nil {
 		t.Errorf("Un expected error: %v", err)
 	}
 
-	fmt.Println(output.Run())
+	// output.Run(rootCmd)
+
 }
