@@ -8,4 +8,5 @@ func TestInit(t *testing.T) {
 	if ans != Check() {
 		t.Errorf("Expected to return %s", ans)
 	}
+
 }

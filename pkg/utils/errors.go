@@ -5,6 +5,7 @@ type FlagError struct {
 	Err error
 }
 
-// func PrintCmdError(fe FlagError) Err() string{
-
-// }
+//PrintCmdError print
+func PrintCmdError(fe FlagError) string {
+	return "Hello World"
+}
