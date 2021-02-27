@@ -1,7 +1,6 @@
 ### Fitty
 
 ![build](https://github.com/makuzaverite/fitty/workflows/build/badge.svg)
-<!-- ![lint](https://github.com/makuzaverite/fitty/workflows/lint/badge.svg) -->
 
 >File system utility cli app
 
