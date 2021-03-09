@@ -119,11 +119,9 @@ func handleListingMore() {
 
 		kilos := float64(info.Size() / 1000)
 
-		fmt.Print(kilos, " K ", "\t")
+		fmt.Print(kilos, " kb ", "\t")
 
 		fmt.Print(info.Mode(), "\t")
-
-		// fmt.Print(inf)
 
 		fmt.Println(file.Name())
 

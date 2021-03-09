@@ -1,12 +1,36 @@
 package main
 
-import "testing"
+import (
+	"testing"
 
-func TestInit(t *testing.T) {
-	ans := "Hello World!"
+	"github.com/kami-zh/go-capturer"
+	"github.com/stretchr/testify/assert"
+)
 
-	if ans != Check() {
-		t.Errorf("Expected to return %s", ans)
-	}
+func testinit(t *testing.T) {
 
+	oldOsExit := osExit
+	defer func() { osExit = oldOsExit }()
+
+	var (
+		expectExitCode = 0
+		expectMsg      = "Usage:"
+
+		actualMsg      string
+		actualExitCode int
+		myExit         = func(code int) {
+			actualExitCode = code
+		}
+	)
+
+	// Assign the mock
+	osExit = myExit
+	// Run main() to capture STDOUT message and its exit-status-code
+	actualMsg = capturer.CaptureOutput(func() {
+		main()
+	})
+
+	// Assertion
+	assert.Equal(t, actualExitCode, expectExitCode, "Unexpected exit code.")
+	assert.Contains(t, actualMsg, expectMsg, "Should contain help message")
 }
