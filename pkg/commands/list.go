@@ -33,7 +33,7 @@ func init() {
 
 	listCmd.Flags().Bool("more", false, "Get more info about the list command")
 
-	rootCommand.AddCommand(listCmd)
+	RootCommand.AddCommand(listCmd)
 }
 
 func handleListingFiles() {

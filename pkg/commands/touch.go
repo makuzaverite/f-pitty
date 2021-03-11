@@ -18,7 +18,7 @@ var addFile = &cobra.Command{
 }
 
 func init() {
-	rootCommand.AddCommand(addFile)
+	RootCommand.AddCommand(addFile)
 }
 
 func newFile(fNames []string) {

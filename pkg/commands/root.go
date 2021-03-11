@@ -8,7 +8,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var rootCommand = &cobra.Command{
+//RootCommand root command
+var RootCommand = &cobra.Command{
 	Use:   "fitty",
 	Args:  cobra.ExactArgs(0),
 	Short: "Interract with file system on all oses with the same commands",
@@ -54,9 +55,9 @@ Version: 0.0.1
 // Execute initialized cli
 func Execute() {
 
-	rootCommand.Flags().Bool("version", false, "Get the current version of fitty")
+	RootCommand.Flags().Bool("version", false, "Get the current version of fitty")
 
-	if err := rootCommand.Execute(); err != nil {
+	if err := RootCommand.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
