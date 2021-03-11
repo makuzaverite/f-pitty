@@ -7,8 +7,3 @@ import (
 func main() {
 	commands.Execute()
 }
-
-//Check checker
-func Check() string {
-	return "Hello World!"
-}

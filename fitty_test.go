@@ -7,6 +7,8 @@ import (
 
 func testinit(t *testing.T) {
 
+	fmt.Println("Hello World!")
+
 	// oldOsExit := osExit
 	// defer func() { osExit = oldOsExit }()
 

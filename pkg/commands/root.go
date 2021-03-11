@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/makuzaverite/fitty/pkg/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -32,30 +31,29 @@ Version: 0.0.1
 	Example:       "$ fitty ls",
 	Run: func(cmd *cobra.Command, args []string) {
 
-		versionFlag := utils.GetBool("version", cmd)
+		// versionFlag := utils.GetBool("version", cmd)
 
-		if versionFlag {
-			version := "0.0.1"
+		// if versionFlag {
+		// 	version := "0.0.1"
 
-			fmt.Printf("\n")
-			fmt.Println("Fitty version ", version)
-			fmt.Println("Check Current release https://github.com/makuzaverite/fitty/releases")
+		// 	fmt.Printf("\n")
+		// 	fmt.Println("Fitty version ", version)
+		// 	fmt.Println("Check Current release https://github.com/makuzaverite/fitty/releases")
 
-		} else {
-			err := cmd.Help()
+		// } else {
+		err := cmd.Help()
 
-			if err != nil {
-				fmt.Println("Failed to display help ", err, 1)
-			}
-			os.Exit(0)
+		if err != nil {
+			fmt.Println("Failed to display help ", err, 1)
 		}
+		os.Exit(0)
 	},
 }
 
 // Execute initialized cli
 func Execute() {
 
-	RootCommand.Flags().Bool("version", false, "Get the current version of fitty")
+	// RootCommand.Flags().Bool("version", false, "Get the current version of fitty")
 
 	if err := RootCommand.Execute(); err != nil {
 		fmt.Println(err)
